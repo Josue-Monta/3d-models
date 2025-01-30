@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vista 3D del Perro</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+<body style="margin: 0; overflow: hidden;">
+    <a-scene>
+        <a-assets>
+            <a-asset-item id="modeloPerro" src="malamute_02.glb"></a-asset-item>
+        </a-assets>
+
+        <!-- Agregar el modelo 3D -->
+        <a-entity position="0 0 -3">
+            <a-gltf-model src="#modeloPerro" position="0 0 0" rotation="0 180 0" scale="0.5 0.5 0.5"></a-gltf-model>
+        </a-entity>
+
+        <!-- Agregar luz -->
+        <a-light type="directional" intensity="1" position="1 1 1"></a-light>
+        <a-light type="ambient" intensity="0.5"></a-light>
+
+        <!-- Cámara -->
+        <a-entity camera look-controls position="0 1.6 0"></a-entity>
+    </a-scene>
+</body>
+</html>
